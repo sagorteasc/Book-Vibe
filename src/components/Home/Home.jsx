@@ -3,9 +3,11 @@ import Banner from "../Banner/Banner";
 import Books from "../Books/Books";
 import Skeleton from "react-loading-skeleton";
 
-const booksPromise = fetch('booksData.json').then(res => res.json());
 
 const Home = () => {
+
+    const booksPromise = fetch('/booksData.json').then(res => res.json());
+
     return (
         <div>
             <Banner></Banner>
