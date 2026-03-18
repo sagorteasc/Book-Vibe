@@ -9,7 +9,7 @@ const NavBar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -17,8 +17,10 @@ const NavBar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 text-white rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {navLinks}
+                        <button className="btn flex mb-2 btn-success md:hidden">Sign In</button>
+                        <button className="btn flex btn-info md:hidden">Sign up</button>
                     </ul>
                 </div>
                 <h3 className="font-bold text-[28px] hidden lg:block">Book Vibe</h3>
@@ -29,11 +31,14 @@ const NavBar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <h3 className="font-bold text-[28px] block lg:hidden">Book Vibe</h3>
+                <h3 className="font-bold text-[28px] hidden md:block lg:hidden">Book Vibe</h3>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-success mr-2">Sign In</button>
-                <button className="btn btn-info">Sign up</button>
+                <div className="hidden md:flex">
+                    <button className="btn btn-success mr-2">Sign In</button>
+                    <button className="btn btn-info">Sign up</button>
+                </div>
+                <h3 className="font-bold text-[28px] block md:hidden">Book Vibe</h3>
             </div>
         </div>
     );

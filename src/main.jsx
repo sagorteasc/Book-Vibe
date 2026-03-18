@@ -10,6 +10,8 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import Home from './components/Home/Home';
 import PagesToRead from './components/PagesToRead/PagesToRead';
 import Banner from './components/Banner/Banner';
+import Books from './components/Books/Books';
+import Book from './components/Book/Book';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/banner",
         element: <Banner></Banner>
+      },
+      {
+        path: "/books",
+        element: <Books></Books>
+      },
+      {
+        path: "/book",
+        element: <Book></Book>
       },
       {
         path: "/dashboard",
