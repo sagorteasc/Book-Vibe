@@ -24,10 +24,12 @@ const Book = ({ bookData }) => {
                 </div>
                 <div className="flex justify-between px-7 pb-7">
                     <p className="text-[#13131380] font-medium">{category}</p>
+
                     <div className="flex items-center text-[#13131380]">
                         <p className="font-medium">{rating}</p>
                         <IoIosStarOutline></IoIosStarOutline>
                     </div>
+
                 </div>
             </Link>
         </div>

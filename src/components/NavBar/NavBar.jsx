@@ -4,8 +4,8 @@ const NavBar = () => {
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><a>Listed Books</a></li>
-        <li><a>Pages to Read</a></li>
+        <li><NavLink to={"/ListedBooks"}>Listed Books</NavLink></li>
+        <li><NavLink to={"/"}>Pages to Read</NavLink></li>
     </>
 
     return (

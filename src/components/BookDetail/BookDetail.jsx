@@ -1,4 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { addToStoredReadList, addToStoredWishList } from "../../utility/addToDb";
+
 
 const BookDetail = () => {
 
@@ -6,17 +8,27 @@ const BookDetail = () => {
     const bookIdNumber = parseInt(bookId);
     const data = useLoaderData();
     const singleBookDetail = data.find(currentData => currentData.bookId === bookIdNumber)
-    console.log(singleBookDetail);
 
-    const { image, bookName, category, author, publisher, rating, review, tags, totalPages, yearOfPublishing } = singleBookDetail;
+    const { bookId: cuurentBookId, image, bookName, category, author, publisher, rating, review, tags, totalPages, yearOfPublishing } = singleBookDetail;
+
+    const handleMarkAsRead = (id) => {
+        addToStoredReadList(id);
+    }
+
+    const handleAddToWishList = (id) => {
+        addToStoredWishList(id);
+    }
 
     return (
-        <div className="min-h-screen flex flex-col justify-center items-center">
-            <div className="card grid grid-cols-2 shadow-sm">
+        <div className="flex flex-col justify-center items-center min-h-screen">
+            <div className="card grid shadow-md drop-shadow-2xl p-5 border border-[#13131325] lg:p-0 lg:grid-cols-2">
+
                 <figure className="bg-[#F3F3F3] rounded-2xl m-6 p-6">
-                    <img className="w-72 h-full rounded-xl" src={image} alt="Album" />
+                    <img className="w-96 h-full rounded-xl" src={image} alt="Album" />
                 </figure>
-                <div className="space-y-2 pr-5 py-5">
+
+                <div className="space-y-2 p-5">
+
                     <h2 className="Titles font-bold text-3xl lg:text-[40px]">{bookName}</h2>
                     <p className="font-medium text-xl text-[#13131380]">By: {author}</p>
                     <hr className="text-[#13131315]" />
@@ -48,8 +60,8 @@ const BookDetail = () => {
                     </div>
 
                     <div className="card-actions">
-                        <button className="btn border-[#13131330] bg-transparent text-black shadow-none">Read</button>
-                        <button className="btn btn-accent text-white shadow-none">Wishlist</button>
+                        <button onClick={() => handleMarkAsRead(cuurentBookId)} className="btn border-[#13131330] bg-transparent text-black shadow-none">Read</button>
+                        <button onClick={() => handleAddToWishList(cuurentBookId)} className="btn btn-accent text-white shadow-none">Wishlist</button>
                     </div>
                 </div>
             </div>
