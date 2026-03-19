@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -8,18 +7,14 @@ import WishListBooks from '../WishListBooks/WishListBooks';
 
 const ListedBooks = () => {
 
-    const [readBooks, setReadBooks] = useState([]);
-    const [wishListBooks, setWishListBooks] = useState([]);
     const allBooks = useLoaderData();
 
-    useEffect(() => {
-        const readListBooks = getStoredReadList();
-        const wishListBooks = getStoredWishList();
-        const wishListBooksItem = allBooks.filter(book => wishListBooks.includes(book.bookId));
-        const readListBooksItem = allBooks.filter(book => readListBooks.includes(book.bookId));
-        setReadBooks(readListBooksItem);
-        setWishListBooks(wishListBooksItem);
-    }, []);
+    const storeReadListBooks = getStoredReadList();
+    const storeWishListBooks = getStoredWishList();
+
+
+    const readListBooksItem = allBooks.filter(book => storeReadListBooks.includes(book.bookId));
+    const wishListBooksItem = allBooks.filter(book => storeWishListBooks.includes(book.bookId));
 
     return (
         <div className="min-h-screen">
@@ -32,12 +27,12 @@ const ListedBooks = () => {
 
                 <TabPanel>
                     {
-                        readBooks.map(readBook => <ReadListBooks key={readBook.bookId} readBook={readBook}></ReadListBooks>)
+                        readListBooksItem.map(readBook => <ReadListBooks key={readBook.bookId} readBook={readBook}></ReadListBooks>)
                     }
                 </TabPanel>
                 <TabPanel>
                     {
-                        wishListBooks.map(wishListBook => <WishListBooks key={wishListBook.bookId} wishListBook={wishListBook}></WishListBooks>)
+                        wishListBooksItem.map(wishListBook => <WishListBooks key={wishListBook.bookId} wishListBook={wishListBook}></WishListBooks>)
                     }
                 </TabPanel>
             </Tabs>

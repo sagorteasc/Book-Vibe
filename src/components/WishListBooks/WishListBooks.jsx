@@ -2,9 +2,10 @@ import PropTypes from "prop-types";
 import { CiLocationOn } from "react-icons/ci";
 import { GoPerson } from "react-icons/go";
 import { IoIosPaper } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const WishListBooks = ({ wishListBook }) => {
-    const { bookName, image, author, tags, yearOfPublishing, publisher, totalPages, category, rating } = wishListBook;
+    const { bookId, bookName, image, author, tags, yearOfPublishing, publisher, totalPages, category, rating } = wishListBook;
 
     return (
         <div>
@@ -43,7 +44,10 @@ const WishListBooks = ({ wishListBook }) => {
                     <div className="card-actions">
                         <button className="btn text-[#328EFF] bg-[#328EFF15] rounded-4xl border-none shadow-none">Category: {category}</button>
                         <button className="btn text-[#FFAC33] bg-[#FFAC3315] rounded-4xl border-none shadow-none">Rating: {rating}</button>
-                        <button className="btn bg-[#23BE0A] text-white font-medium text-lg rounded-4xl border-none shadow-none">View Details</button>
+
+                        <Link to={`/book/${bookId}`}>
+                            <button className="btn bg-[#23BE0A] text-white font-medium text-lg rounded-4xl border-none shadow-none">View Details</button>
+                        </Link>
                     </div>
 
                 </div>
