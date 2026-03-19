@@ -12,9 +12,6 @@ const PagesToRead = () => {
         }
     });
 
-    console.log(bookpages);
-
-
     return (
         <div className='min-h-screen flex items-center justify-center'>
             <BarChart width="100%" height={400} responsive data={bookpages}>

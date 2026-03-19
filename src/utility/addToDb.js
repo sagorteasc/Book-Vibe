@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 // get read list
 const getStoredReadList = () => {
     const storedListStr = localStorage.getItem('read-list');
@@ -14,12 +16,13 @@ const getStoredReadList = () => {
 const addToStoredReadList = (id) => {
     const storedList = getStoredReadList();
     if (storedList.includes(id)) {
-        console.log(id, "already exist");
+        toast.error("This book is already exist in your Read-List");
     }
     else {
         storedList.push(id);
         const storedListStr = JSON.stringify(storedList);
         localStorage.setItem('read-list', storedListStr);
+        toast.success('This book is added to your Read-List');
     }
 }
 
@@ -39,12 +42,14 @@ const getStoredWishList = () => {
 const addToStoredWishList = (id) => {
     const storedList = getStoredWishList();
     if (storedList.includes(id)) {
-        console.log(id, "already exist");
+        toast.error("This book is already exist in your Wish-List");
+
     }
     else {
         storedList.push(id);
         const storedListStr = JSON.stringify(storedList);
         localStorage.setItem('wish-list', storedListStr);
+        toast.success('This book is added to your Wish-List');
     }
 }
 

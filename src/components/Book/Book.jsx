@@ -7,9 +7,9 @@ const Book = ({ bookData }) => {
     const { bookId, bookName, author, image, tags, category, rating } = bookData;
 
     return (
-        <div className="card shadow-sm border border-[#13131315] w-full">
+        <div className="card shadow-sm border bg-base-100 text-white border-white w-full">
             <Link to={`/book/${bookId}`}>
-                <figure className="bg-[#F3F3F3] rounded-2xl m-6 p-10">
+                <figure className="bg-[#F3F3F3] rounded-2xl m-6 p-5">
                     <img src={image} alt={bookName} className="w-40 h-52 rounded-xl" />
                 </figure>
                 <div className="card-body grow">
@@ -19,13 +19,13 @@ const Book = ({ bookData }) => {
                         }
                     </div>
                     <h2 className="Titles font-bold text-2xl">{bookName}</h2>
-                    <p className="font-medium text-[#13131380]">By: {author}</p>
-                    <hr className="text-[#13131325] border-dashed mt-2" />
+                    <p className="font-medium">By: {author}</p>
+                    <hr className="border-dashed mt-2" />
                 </div>
                 <div className="flex justify-between px-7 pb-7">
-                    <p className="text-[#13131380] font-medium">{category}</p>
+                    <p className="font-medium">{category}</p>
 
-                    <div className="flex items-center text-[#13131380]">
+                    <div className="flex items-center">
                         <p className="font-medium">{rating}</p>
                         <IoIosStarOutline></IoIosStarOutline>
                     </div>

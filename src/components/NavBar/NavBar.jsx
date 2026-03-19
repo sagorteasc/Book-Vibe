@@ -20,7 +20,7 @@ const NavBar = () => {
                         tabIndex="-1"
                         className="menu menu-sm dropdown-content bg-base-100 text-white rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {navLinks}
-                        <button className="btn flex mb-2 btn-success md:hidden">Sign In</button>
+                        <button className="btn flex my-2 btn-success md:hidden">Sign In</button>
                         <button className="btn flex btn-info md:hidden">Sign up</button>
                     </ul>
                 </div>
