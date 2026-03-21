@@ -1,16 +1,38 @@
-# React + Vite
+# 📚 Book Vibe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Book Vibe is a modern and responsive web application that helps users explore books, manage their reading list, and track their wishlist. It provides a smooth user experience with dynamic data handling and interactive UI features.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 📖 Browse books with details (title, author, category, rating)
+- 🔍 View detailed information for each book
+- ❤️ Add books to **Wishlist**
+- 📚 Add books to **Read List**
+- 💾 Data stored using **Local Storage**
+- 🔃 Sort books based on different criteria
+- 📊 Visualize reading progress with charts
+- 🔔 Toast notifications for user actions
+- 📱 Fully responsive design
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🔗 https://your-live-link-here.com
+
+---
+
+## 🛠️ Technologies Used
+
+- **React.js**
+- **React Router**
+- **Tailwind CSS**
+- **DaisyUI**
+- **Local Storage API**
+- **Recharts (for charts)**
+- **React Icons**
+- **React Toastify**
+
+---
