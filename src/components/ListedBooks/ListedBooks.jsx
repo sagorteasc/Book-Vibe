@@ -27,26 +27,29 @@ const ListedBooks = () => {
 
         // sort by rating
         if (sortType === 'Rating') {
-            const sortList = readListBooksItem.sort((a, b) => b.rating - a.rating);
+            const sortReadList = readListBooksItem.sort((a, b) => b.rating - a.rating);
+            const sortWishList = wishListBooksItem.sort((a, b) => b.rating - a.rating);
 
-            setSortReadList(sortList);
-            setSortWishList(sortList);
+            setSortReadList(sortReadList);
+            setSortWishList(sortWishList);
         }
 
         // sort by number of pages
         if (sortType === 'No of pages') {
-            const sortList = readListBooksItem.sort((a, b) => a.totalPages - b.totalPages);
+            const sortReadList = readListBooksItem.sort((a, b) => a.totalPages - b.totalPages);
+            const sortWishList = wishListBooksItem.sort((a, b) => a.totalPages - b.totalPages);
 
-            setSortReadList(sortList);
-            setSortWishList(sortList);
+            setSortReadList(sortReadList);
+            setSortWishList(sortWishList);
         }
 
         // sort by publishing year
         if (sortType === 'Publishing year') {
-            const sortList = readListBooksItem.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+            const sortReadList = readListBooksItem.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+            const sortWishList = wishListBooksItem.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
 
-            setSortReadList(sortList);
-            setSortWishList(sortList);
+            setSortReadList(sortReadList);
+            setSortWishList(sortWishList);
         }
     }
 
